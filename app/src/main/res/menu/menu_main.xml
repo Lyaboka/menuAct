@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.basicactivity.Menu_Activity">
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/light"
+        android:orderInCategory="100"
+        android:title="@string/light"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/night"
+        android:orderInCategory="100"
+        android:title="@string/night"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/warm"
+        android:orderInCategory="100"
+        android:title="@string/warm"
+        app:showAsAction="never" />
+</menu>
