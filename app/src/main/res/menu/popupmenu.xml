@@ -12,6 +12,7 @@
             android:id="@+id/menu3"
             android:title="Popup menu item 3">
                 <menu>
+                    <group android:id="@+id/submenugroup">
                     <item
                         android:id="@+id/submenu"
                         android:title="Submenu 1"/>
@@ -21,11 +22,9 @@
                     <item
                         android:id="@+id/submenu3"
                         android:title="Submenu 3"/>
+                    </group>
                 </menu>
             </item>
-        </group>
-
-    <group android:id="@+id/menugroup2">
     <item
         android:id="@+id/menu4"
         android:checkable="true"
