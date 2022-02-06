@@ -6,20 +6,29 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.PopupMenu
 import android.widget.TextView
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
 
 class MenuActivity : AppCompatActivity() {
     private lateinit var menuB: Button
     private lateinit var helloTV: TextView
+    private lateinit var helloIV: ImageView
+    private var timeOfLesson: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
-        menuB = findViewById(com.example.basicactivity.R.id.menuB)
+        menuB = findViewById(R.id.menuB)
+        helloIV = findViewById(R.id.helloIV)
         helloTV = findViewById(R.id.helloTV)
         menuB.setOnClickListener {
             showPopup(menuB)
+        }
+        helloIV.setOnClickListener {
+            makeNotification(101,"channelID")
         }
     }
 
@@ -50,42 +59,55 @@ class MenuActivity : AppCompatActivity() {
         popupMenu.inflate(R.menu.popupmenu)
         popupMenu.show()
 
+
         popupMenu.setOnMenuItemClickListener{ it -> R.id.menugroup1
             when (it.itemId) {
-                R.id.menu1 -> {
-                    helloTV.text = "You choose Popup 1"
+                R.id.ten -> {
+                    timeOfLesson = "Ваше занятие с 10:00 по 12:00"
+                    helloTV.text = timeOfLesson
+
                 }
-                R.id.menu2 -> {
-                    helloTV.text = "You choose Popup 2"
+                R.id.twelve -> {
+                    timeOfLesson = "Ваше занятие с 12:00 по 14:00"
+                    helloTV.text = timeOfLesson
                 }
-                R.id.menu3 -> {
+                R.id.two -> {
                     popupMenu.setOnMenuItemClickListener {it -> R.id.submenugroup
                         when (it.itemId) {
-                            R.id.submenu -> {
-                                helloTV.text = "You choose Submenu 1"
+                            R.id.twoSub -> {
+                                timeOfLesson = "Ваше занятие с 14:00 по 15:00"
+                                helloTV.text = timeOfLesson
                             }
-                            R.id.submenu2 -> {
-                                helloTV.text = "You choose Submenu 2"
-                            }
-                            R.id.submenu3 -> {
-                                helloTV.text = "You choose Submenu 3"
+                            R.id.treeSub -> {
+                                timeOfLesson = "Ваше занятие с 15:00 по 16:00"
+                                helloTV.text = timeOfLesson
                             }
                         }
                         true
                     }
                 }
-                R.id.menu4 -> {
-                    helloTV.text = "You choose Popup 4"
+                R.id.four -> {
+                    timeOfLesson = "Ваше занятие с 16:00 по 18:00"
+                    helloTV.text = timeOfLesson
                 }
-                R.id.menu5 -> {
-                    helloTV.text = "You choose Popup 5"
+                R.id.six -> {
+                    timeOfLesson = "Ваше занятие с 18:00 по 20:00"
+                    helloTV.text = timeOfLesson
                 }
-                R.id.menu6 -> {
-                    helloTV.text = "You choose Popup 6"
-                }
-                }
-                true
+            }
+            true
         }
+    }
+    private fun makeNotification(not_id: Int, channelID: String) {
+        val builder = NotificationCompat.Builder(this, channelID)
+            .setSmallIcon(R.drawable.ic_baseline_back_hand_24)
+            .setContentTitle("Запись на занятие")
+            .setContentText(timeOfLesson)
+            .setAutoCancel(true)
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
 
+        with(NotificationManagerCompat.from(this)) {
+            notify(not_id, builder.build())
+        }
     }
 }
