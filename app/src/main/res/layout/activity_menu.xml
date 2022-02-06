@@ -15,10 +15,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HelloIV" />
+        app:layout_constraintTop_toBottomOf="@+id/helloIV" />
 
     <ImageView
-        android:id="@+id/HelloIV"
+        android:id="@+id/helloIV"
         android:layout_width="123dp"
         android:layout_height="109dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -37,5 +37,16 @@
         app:layout_constraintBottom_toTopOf="@+id/menuB"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HelloIV" />
+        app:layout_constraintTop_toBottomOf="@+id/helloIV" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" Нажми на ладонь для записи"
+        app:layout_constraintBottom_toTopOf="@+id/helloIV"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

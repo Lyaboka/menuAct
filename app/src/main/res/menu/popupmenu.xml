@@ -2,43 +2,35 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
         <group android:id="@+id/menugroup1">
             <item
-                android:id="@+id/menu1"
+                android:id="@+id/ten"
                 android:icon="@mipmap/ic_launcher"
-                android:title="Popup menu item 1"/>
+                android:title="10:00 - 12:00"/>
             <item
-                android:id="@+id/menu2"
-                android:title="Popup menu item 2"/>
+                android:id="@+id/twelve"
+                android:title="12:00 - 14:00"/>
             <item
-            android:id="@+id/menu3"
-            android:title="Popup menu item 3">
+            android:id="@+id/two"
+            android:title="14:00 - 16:00">
                 <menu>
+                    <group android:id="@+id/submenugroup">
                     <item
-                        android:id="@+id/submenu"
-                        android:title="Submenu 1"/>
+                        android:id="@+id/twoSub"
+                        android:title="14:00 - 15:00"/>
                     <item
-                        android:id="@+id/submenu2"
-                        android:title="Submenu 2"/>
-                    <item
-                        android:id="@+id/submenu3"
-                        android:title="Submenu 3"/>
+                        android:id="@+id/treeSub"
+                        android:title="15:00 - 16:00"/>
+                    </group>
                 </menu>
             </item>
-        </group>
-
-    <group android:id="@+id/menugroup2">
     <item
-        android:id="@+id/menu4"
+        android:id="@+id/four"
         android:checkable="true"
-        android:checked="true"
-        android:icon="@mipmap/ic_launcher"
-        android:title="Popup menu item 4"/>
+        android:icon="@drawable/ic_baseline_back_hand_24"
+        android:title="16:00 - 18:00"/>
     <item
-        android:id="@+id/menu5"
-        android:title="Popup menu item 5"
+        android:id="@+id/six"
+        android:title="18:00 - 20:00"
         android:enabled="false"/>
-    <item
-        android:id="@+id/menu6"
-        android:title="Popup menu item 6"/>
     </group>
 
 </menu>
